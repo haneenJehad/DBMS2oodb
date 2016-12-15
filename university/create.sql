@@ -1,6 +1,15 @@
 --campus
 create or replace campus_t  as object();
---professor: object, varray 5
+--professor: 
+CREATE OR REPLACE TYPE Professor_T AS object
+(prof_ID VARCHAR2(10),
+ prof_name VARCHAR2(20),
+ prof_contact VARCHAR2(12),
+ prof_research VARCHAR2(12),
+ prof_year NUMBER)
+);
+CREATE OR REPLACE TYPE Professors AS VARRAY(5) OF
+Professor_T;
 
 --units: varray 5 varchar2
 
