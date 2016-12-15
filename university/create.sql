@@ -1,12 +1,37 @@
 --campus
 create or replace campus_t  as object();
---professor: object, varray 5
+--professor: 
+CREATE OR REPLACE TYPE Professor_T AS object
+(prof_ID VARCHAR2(10),
+ prof_name VARCHAR2(20),
+ prof_contact VARCHAR2(12),
+ prof_research VARCHAR2(12),
+ prof_year NUMBER)
+);
+CREATE OR REPLACE TYPE Professors AS VARRAY(5) OF
+Professor_T;
 
 --units: varray 5 varchar2
 
 --school
+CREATE OR REPLACE TYPE School_T AS object
+(school_id VARCHAR2(12),
+ school_name VARCHAR2(20),
+ school_head VARCHAR2(20),
+ school_prof Professors)
+);
+CREATE OR REPLACE TYPE School_Table_T AS TABLE OF
+School_T;
 
 --department
+CREATE OR REPLACE TYPE Department_T AS object
+(dept_id VARCHAR2(12),
+ dept_name VARCHAR2(20),
+ dept_head VARCHAR2(20),
+ dept_prof Professors)
+);
+CREATE OR REPLACE TYPE Department_Table_T AS TABLE OF
+Department_T;
 
 --research-center
 
