@@ -15,6 +15,14 @@ Professor_T;
 
 --school
 
+CREATE OR REPLACE TYPE School_T AS object
+(school_id VARCHAR2(12),
+ school_name VARCHAR2(20),
+ school_head VARCHAR2(20),
+ school_prof Professors)
+);
+CREATE OR REPLACE TYPE School_Table_T AS TABLE OF
+School_T;
 --department
 
 --research-center
