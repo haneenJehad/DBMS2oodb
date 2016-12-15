@@ -25,6 +25,14 @@ CREATE OR REPLACE TYPE School_Table_T AS TABLE OF
 School_T;
 --department
 
+CREATE OR REPLACE TYPE Department_T AS OBJECT
+(dept_id VARCHAR2(12),
+ dept_name VARCHAR2(20),
+ dept_head VARCHAR2(20),
+ dept_prof Professors)
+);
+CREATE OR REPLACE TYPE Department_Table_T AS TABLE OF
+Department_T;
 --research-center
 
 --faculty
@@ -41,7 +49,7 @@ School_T;
 
 --degree
 
-CREATE OR REPLACE TYPE Degree_T AS OBJECT(
+CREATE OR REPLACE TYPE Degree_T AS object(
   deg_ID VARCHAR2(20),
   deg_name VARCHAR2(30),
   deg_length VARCHAR2(30),
